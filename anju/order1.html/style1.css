@@ -1,0 +1,261 @@
+/* General Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+}
+
+.order-container {
+    background: #fff;
+    width: 50%;
+    margin: 50px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    color: #ff5722;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+    
+}
+
+input[type="text"], input[type="tel"] {
+    width: 80%;
+    padding: 10px;
+    border: 1px solid #f59536;
+   
+}
+input[type="text"]:focus, input[type="tel"]:focus {
+    outline: none;
+    border: 2px solid #ff9800;
+    box-shadow: 0 0 5px #ff9800;
+}
+
+
+/* Food Selection */
+.food-selection {
+    margin: 20px 0;
+}
+
+/* Toggle Arrow */
+.toggle-arrow {
+    display: block;
+    font-size: 18px;
+    font-weight: bold;
+    background: #ff9800;
+    color: white;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.toggle-arrow:hover {
+    background: #e68900;
+}
+
+/* Hide checkboxes */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Main Items */
+.main-items {
+    display: none;
+    background: #fff3e0;
+    padding: 10px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+#show-main-items:checked ~ .main-items {
+    display: block;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.main-item {
+    display: block;
+    background: #ff5722;
+    color: white;
+    padding: 10px;
+    margin: 5px 0;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.main-item:hover {
+    background: #e64a19;
+}
+
+/* Sub Items */
+.sub-items {
+    display: none;
+    background: #ffe0b2;
+    padding: 10px;
+    border-radius: 5px;
+    margin: 5px 0;
+}
+
+.food-checkbox:checked ~ .sub-items {
+    display: block;
+    animation: slideIn 0.5s ease-in-out;
+}
+
+.sub-items label {
+    display: block;
+    padding: 5px;
+    margin: 3px 0;
+    background: #ffcc80;
+    border-radius: 3px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.sub-items label:hover {
+    background: #ffb74d;
+}
+
+/* Payment Options */
+.payment-methods {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.payment-option {
+    width: 120px;
+    padding: 10px;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.payment-option img {
+    width: 50px;
+    height: 50px;
+}
+
+.payment-option p {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+.payment-option:hover{
+    border:2px solid #e68900;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #e68900;
+    transform: translateY(-3px);
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes slideIn {
+    from { opacity: 0; transform: translateX(-20px); }
+    to { opacity: 1; transform: translateX(0); }
+}
+
+
+*#info {
+  display: none;
+
+  margin-top: 30px;
+  font-size: 18px;
+  color: #333;
+  background: #fff3cd;
+  padding: 15px;
+  border: 2px solid #ffa500;
+  border-radius: 10px;
+  animation: fade 0.4s ease-in-out;
+}
+
+#info.show {
+  display: block;
+}
+
+button {
+    position: fixed;
+    top: 70px;
+    right:200px;
+    text-align: right;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #eef0f2;
+  color:#f64d15;
+  border: none;
+  border-radius: 25px;
+  
+}
+
+button:hover {
+  background: #f64d15;
+  color:#eef0f2 ;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+*#info {
+  display: none;
+
+  margin-top: 30px;
+  font-size: 18px;
+  color: #333;
+  background: #fff3cd;
+  padding: 15px;
+  border: 2px solid #ffa500;
+  border-radius: 10px;
+  animation: fade 0.4s ease-in-out;
+}
+
+#info.show {
+  display: block;
+}
+
+button {
+    position: static;
+    top: 70px;
+    right: 250px;
+  padding: 10px 20px;
+  font-size: 18px;
+  background: #eef0f2;
+  color:#f64d15;
+  border: none;
+  border-radius: 25px;
+  
+}
+@media only screen and(max-width:600px) {
+    button{
+    position:static;
+    top: 60px;
+    right: 200px;
+    }
+    
+}
+
+button:hover {
+  background: #f64d15;
+  color:#eef0f2 ;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}

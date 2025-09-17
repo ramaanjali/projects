@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Order - Favorite Selection</title>
+    <link rel="stylesheet" href="style1.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+
+    <div class="order-container">
+        <h2>Order Your Food
+</h2>
+        <button onclick="document.getElementById('info').classList.toggle('show')">Contact 📞</button>
+
+<div id="info">
+  <p>📧 Email: <a href="mailto:myrestaurant@example.com">myrestaurant@example.com</a></p>
+  <p>📞 Manager: +91 98765 43210</p>
+  <p>🏃 Delivery Boy: Rajesh (2 km away, ETA: 15 mins)</p>
+</div>
+        <p>Fill your details and select up to 10 food items</p>
+        
+    
+
+        <!-- Customer Details -->
+        <form>
+            <input type="text" placeholder="Your Name" required>
+            <input type="text" placeholder="Your Address" required>
+            <input type="tel" placeholder="Contact Number" required>
+            <input type="text" id="favorite-food" placeholder="Your Favorite Food (Max 10 items)" readonly>
+        </form>
+
+        <!-- Food Selection -->
+        <div class="food-selection">
+            <input type="checkbox" id="show-main-items">
+            <label for="show-main-items" class="toggle-arrow">▼ Select Your Food</label>
+
+            <div class="main-items">
+                <script>
+                   
+                    
+                   const mainDishes = [
+                        "Biryani", "Pizza", "Burger", "Pasta", "Fried Rice", "Noodles",
+                        "Steamed Momos", "Crispy Samosa", "Dosa", "Curry with Roti", "Cakes", "Cool Drinks"
+                    ];
+
+                    const subDishesMap = {
+                        "Biryani": ["Chicken", "Mutton", "Prawns", "Mushroom", "Veg", "Tikka"],
+                        "Pizza": ["Paneer Tikka", "Tandoori Chicken", "Masala ", "Uttapam ", "Mutton Keema ", "Onion"],
+                        "Burger": ["Veg", "Chicken", "Gourment", "Paneer", "Cheese", "Spicy"],
+                        "Pasta": ["Chicken Tomato Macaroni  ", "Pav Bhaji Flavored ", "Chilli Capsicum Macaroni ", "Bechamel Sauce "],
+                        "Fried Rice": ["Veg", "Egg", "Chicken", "Prawn", "Brochill ", "Mushroom","Cauliflower " ],
+                        "Noodles": ["Veg","Oats Noodles" ,"Chicken", "Egg", "Paneer", "Asian", "Hakka"],
+                        "Steamed Momos": ["Egg", "Chicken", "Paneer", "Onion", "Cheese", "Keema"],
+                        "Crispy Samosa": ["Keema", "Paneer", "onion", "Egg", "Cheese", "chicken"],
+                        "Dosa": ["Plain", "Masala", "Neer ", "Ragi ", "Cheese", "Rava"],
+                        "Curry with Roti": ["Paneer", "Chicken", "Mutton Keema", "Chettinad Chicken", "Butter Chicken", "Teekha Murg Curry"],
+                        "Cakes": ["Chocolate", "Vanilla", "Cheese Cake Flavour", "Blueberry Cake Flavour", "Red Velvet","Mango Cake Flavour"],
+                        "Cool Drinks": ["Coke", "Pepsi", "Sprite", "Red Bull (250ml)", "coke zero", "Thumbs Up"]
+                    };
+                    
+                    document.write(mainDishes.map((dish, index) => `
+                        <input type="checkbox" id="item${index}" class="food-checkbox">
+                        <label for="item${index}" class="main-item">🍽 ${dish}</label>
+                        <div class="sub-items">
+                            ${subDishesMap[dish].map(sub => `
+                                <label>
+                                    <input type="checkbox" class="food-checkbox" value="${dish} - ${sub}" onclick="updateFavoriteFood(this)">
+                                    ${sub} ${dish}
+                                </label>
+                            `).join('')}
+                        </div>
+                    `).join(''));
+                </script>
+            </div>
+        </div>
+
+        <h3>Payment Options</h3>
+        <div class="payment-methods">
+            <div class="payment-option phonepe">
+                <a href="file:///C:/Users/yelur/OneDrive/Desktop/anju/order1.html/index.html">
+                <img src="C:\Users\yelur\OneDrive\Pictures\phone.jpg" alt="phone pay">
+                
+                </a>
+                <p>Pay via PhonePe</p>
+            </div>
+            <div class="payment-option gpay">
+                <a href="file:///C:/Users/yelur/OneDrive/Desktop/anju/order1.html/index.html">
+                <img src="C:\Users\yelur\OneDrive\Pictures\google.jpg" alt="Google Pay">
+                
+                </a>
+                <p>Pay via Google Pay</p>
+            </div>
+            <div class="payment-option vasa">
+                <a href="file:///C:/Users/yelur/OneDrive/Desktop/anju/order1.html/index.html">
+               <img src="C:\Users\yelur\OneDrive\Pictures\visa.jpg"  alt="visa">
+                
+                </a>
+                <p>Pay via Vasa</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+
+</body>
+</html>
