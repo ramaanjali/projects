@@ -1,0 +1,28 @@
+/* style genera*/
+
+body{
+    
+
+        font-family: Arial, sans-serif;
+        background-size: cover;
+        background-repeat: no-repeat; 
+        height: 100vh;
+       
+    
+}
+.order{
+    color: antiquewhite;
+    position: relative;
+    top:170px;
+    left:90px;
+
+
+}
+
+    
+  .order i{
+    color: rgb(71, 232, 17);
+    background-color:transparent;
+  }      
+      
+
