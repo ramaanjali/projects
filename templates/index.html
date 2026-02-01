@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Movie Recommender</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+
+<div class="container">
+    <h1>🎬 Movie Recommender System</h1>
+
+    <form action="/recommend" method="POST">
+        <input type="text" name="movie" placeholder="Enter movie name" required>
+        <button type="submit">Recommend</button>
+    </form>
+
+    {% if recommendations %}
+    <h2>Recommendations for "{{ movie_name }}"</h2>
+
+    {% for movie in recommendations %}
+        <div class="movie-card">
+            <h3>🎬 {{ movie.title }}</h3>
+
+            <p><strong>🎥 Director:</strong>
+                {{ movie.director.name }} ({{ movie.director.role }})
+            </p>
+
+            <p><strong>🎭 Cast:</strong></p>
+            <ul>
+                {% for actor in movie.cast %}
+                    <li>{{ actor.name }} — {{ actor.role }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <hr>
+    {% endfor %}
+{% endif %}
+
+</div>
+
+</body>
+</html>
