@@ -1,0 +1,93 @@
+/* style generate */
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #edebeb;
+    text-align: center;
+    margin:2px;
+    padding: 0;
+}
+#Menu {
+    padding: 20px;
+}
+
+#Menu h1 {
+    color: #ff6600;
+    font-size: 28px;
+    margin-bottom: 20px;
+    font-size: 40px;
+    font-family: 'fantasy';
+}
+
+/* Menu Container */
+.menu-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    padding: 20px;
+    max-width: 1000px;
+    margin: auto;
+}
+
+/* Menu Item */
+.menu-item {
+    background: white;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    padding: 15px;
+    text-align: center;
+    transition: 0.3s;
+}
+
+.menu-item:hover {
+    border-color: #ff6600;
+    transform: scale(1.05);
+}
+
+/* Image */
+.menu-item img {
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+/* Dish Name */
+.menu-item h3 {
+    margin: 10px 0;
+    color: #333;
+}
+
+/* Description */
+.menu-item p {
+    font-size: 14px;
+    color: #666;
+}
+.order-form button{
+    width: 150px;
+    height: 32px;
+    
+        background-color: #ff6600;
+        border: 1px solid #ff6600;
+        color: white;
+        font-size: 19px;
+        border-radius: 8px;
+        
+    }
+
+
+.order-form button:hover {
+    background-color: #25e82e;
+    border: 1px solid #25e82e;
+   
+
+}
+/* Footer */
+
+footer {
+    background-color: #111;
+    color: #fff;
+    text-align: center;
+    padding: 10px 5px;
+    
+}
+
